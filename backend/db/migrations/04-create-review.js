@@ -16,6 +16,22 @@ module.exports = {
                     primaryKey: true,
                     type: Sequelize.INTEGER,
                 },
+                userId : {
+                    type: Sequelize.INTEGER,
+                    references: {
+                        model: 'Users',
+                        key: 'id'
+                    },
+                    onDelete: 'CASCADE',
+                },
+                spotId : {
+                    type: Sequelize.INTEGER,
+                    references: {
+                        model: 'Spots',
+                        key: 'id'
+                    },
+                    onDelete: 'CASCADE',
+                },
                 review: {
                     type: Sequelize.STRING(1000),
                     allowNull: false,

@@ -20,6 +20,14 @@ module.exports = {
                     type: Sequelize.STRING(50),
                     allowNull: false,
                 },
+                ownerId:{
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'Users',
+                    key: 'id'
+                },
+                onDelete: 'CASCADE',
+                },
                 city: {
                     type: Sequelize.STRING(30),
                     allowNull: false,

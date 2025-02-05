@@ -20,6 +20,14 @@ module.exports = {
                     type: Sequelize.STRING(50),
                     allowNull: false,
                 },
+                spotId: {
+                type: Sequelize.INTEGER,
+                references: {
+                    model: 'Spots',
+                    key: 'id'
+                },
+                onDelete: 'CASCADE',
+                },
                 preview: {
                     type: Sequelize.BOOLEAN,
                     allowNull: false,
